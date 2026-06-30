@@ -4,21 +4,40 @@ const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
   return (
    <>
-   <div className="flex justify-between items-center h-20 px-6 lg:px-10 shadow-sm relative">
-    <h1 className='text-2xl font-bold text-purple-800 hover:scale-110 transition-transform duration-300'>
-        <Link to="/">
-        Job portal
-    </Link>
-    </h1>
+   <div className="sticky top-0 z-50 flex justify-between items-center h-20 px-6 lg:px-10 bg-white/80 backdrop-blur-md shadow-md border-b border-gray-100 relative">
+    <h1 className="text-3xl font-extrabold">
+  <Link to="/">
+    <span className="text-gray-900">Job</span>{" "}
+    <span className="text-purple-700">Portal</span>
+  </Link>
+</h1>
 <ul className="hidden md:flex gap-10 cursor-pointer">
         <li className='hover:text-purple-800 hover:scale-110 transition-transform duration-300 hover:font-bold'>
-            <NavLink className={({isActive})=> isActive ? "font-bold text-purple-800 text-lg" : ""} to="/">Home</NavLink>
+            <NavLink className={({ isActive }) =>
+  `relative transition-all duration-300 ${
+    isActive
+      ? "text-purple-700 font-bold"
+      : "text-gray-700 hover:text-purple-700"
+  }`
+} to="/">Home</NavLink>
         </li>
         <li className='hover:text-purple-800 hover:scale-110 transition-transform duration-300 hover:font-bold'>
-           <NavLink className={({isActive})=> isActive ? "font-bold text-purple-800 text-lg" : ""} to="/jobs"> Jobs</NavLink>
+           <NavLink className={({ isActive }) =>
+  `relative transition-all duration-300 ${
+    isActive
+      ? "text-purple-700 font-bold"
+      : "text-gray-700 hover:text-purple-700"
+  }`
+} to="/jobs"> Jobs</NavLink>
         </li>
         <li className='hover:text-purple-800 hover:scale-110 transition-transform duration-300 hover:font-bold'>
-           <NavLink className={({isActive})=> isActive ? "font-bold text-purple-800 text-lg" : ""} to="/saved-jobs"> Saved</NavLink>
+           <NavLink className={({ isActive }) =>
+  `relative transition-all duration-300 ${
+    isActive
+      ? "text-purple-700 font-bold"
+      : "text-gray-700 hover:text-purple-700"
+  }`
+} to="/saved-jobs"> Saved</NavLink>
         </li>
     </ul>
   <button
